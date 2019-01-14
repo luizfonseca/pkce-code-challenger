@@ -1,4 +1,7 @@
 {
+  "builds": [
+    { "src": "*.js", "use": "@now/node" }
+  ],
   "alias": ["pkce-code-challenge"],
-  "use": "@now/node"
+  "version": 2
 }
