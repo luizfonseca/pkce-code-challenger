@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Challenger</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+</head>
+<body class="columns is-centered">
+  <form action="#" class="form column is-4" method="POST">
+    <h1 class="is-bold is-large title">Code Challenger</h1>
+    <div class="field">
+      <label class="label">Code Verifier</label>
+      <div class="control">
+        <input class="input" type="text" name="verifier" placeholder="Verifier">
+      </div>
+    </div>
+    
+    <div class="field">
+      <label class="label">Code Challenge</label>
+      <div class="control">
+        <input class="input" type="text" name="challenge" placeholder="Challenge">
+      </div>
+    </div>
+    
+    <button class="button is-primary verifier-gen" type="submit">Generate Code Verifier</button>
+    <button class="button is-warning challenge-gen" type="submit">Generate Code Challenge</button>
+  </form>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/randombytes@2.0.6/browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.min.js"></script>
+<script>
+  const inputs = {
+    verifier: document.querySelector('.verifier-gen'),
+    challenger: document.querySelector('.challenger-gen')
+  };
+
+  const base64URLEncode2 = (str) => {
+    return str.toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=/g, '');
+  }
+  
+  document.querySelector('.form').addEventListener('submit', (event) => {
+    event.preventDefault();
+  })
+
+
+  inputs.verifier.addEventListener('click', (event) => {
+
+  })
+</script> 
+</html>
