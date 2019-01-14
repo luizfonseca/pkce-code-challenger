@@ -1,3 +1,4 @@
 {
-  "alias": ["pkce-code-challenge"]
+  "alias": ["pkce-code-challenge"],
+  "use": "@now/node"
 }
