@@ -1,8 +1,8 @@
-const express = require('express')
 const app = express()
-const crypto = require('crypto');
-const port = process.env.PORT || 3300;
 const path = require('path')
+const port = process.env.PORT || 3300;
+const crypto = require('crypto');
+const express = require('express')
 const bodyParser = require("body-parser");
 
 const base64URLEncode = (str) => {
