@@ -16,16 +16,18 @@ const sha256 = (buffer) => {
 }
 app.use(bodyParser());
 
+
+// Serves index.html file 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 })
 
-// respond with "hello world" when a GET request is made to the homepage
+// Generates a verifier
 app.post('/verifier', (req, res) => {
   res.json({ verifier: base64URLEncode(crypto.randomBytes(32)) })
 })
 
-
+// Generates a challenge based on the verifier sent.
 app.post('/challenger', (req, res) => {
   if (!req.body.verifier) {
     res.json({ error: "No verifier specified" })
